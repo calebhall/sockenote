@@ -1,0 +1,31 @@
+{
+    "name": "sockenote",
+    "version": "0.1",
+    "Description": "",
+    "homepage": "github.com/calebdhall",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/calebdhall/sockenote"
+    },
+    "bug": {
+        "url": "https://github.com/calebdhall/sockenote/issues"
+    },
+    "auther": {
+        "name": "caleb hall",
+        "email": "calebdhall@gmail.com"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+    	"express": "`4.9.x",
+        "ws": "0.4.x",
+        "twit": "latest"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "keywords": ["social media thing"],
+    "license": "MIT"
+}
