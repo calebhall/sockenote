@@ -19,9 +19,7 @@
         "start": "node index.js"
     },
     "dependencies": {
-    	"express": "4.9.x",
-        "ws": "0.4.x",
-        "twit": "latest"
+
     },
     "engines": {
         "node": "0.10.x"
