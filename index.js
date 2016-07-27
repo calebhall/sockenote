@@ -36,15 +36,15 @@ wss.on("connection", function(ws) {
         if (data.event == "share") {
             if (data.hasOwnProperty("image") && data.hasOwnProperty("tweet")) {
 
-                // T.post("media/upload", {
-                //     media_data: data.image
-                // }, function(err, res, response) {
-                //     var params = {
-                //         status: data.tweet,
-                //         media_ids: [res.media_id_string]
-                //     }
-                //     T.post("statuses/update", params, function(err, res, response) {})
-                // })
+                T.post("media/upload", {
+                    media_data: data.image
+                }, function(err, res, response) {
+                    var params = {
+                        status: data.tweet,
+                        media_ids: [res.media_id_string]
+                    }
+                    T.post("statuses/update", params, function(err, res, response) {})
+                })
             } else
                 ws.send("no image")
         }else
