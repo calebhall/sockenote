@@ -1,3 +1,4 @@
+const fs = require("fs");
 var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
@@ -17,7 +18,36 @@ var Twit = require("twit"),
         consumer_secret: process.env.CONSUMER_SECRET,
         access_token: process.env.ACCESS_TOKEN,
         access_token_secret: process.env.ACCESS_TOKEN_SECRET
+    });
+
+var Client = require("instagram-private-api").V1;
+var device = new Client.Device("sockenote");
+var storage = new Client.CookieFileStorage(__dirname + "/cookie/caleb.json");
+
+function login_to_igrm_and_upload_image(stream, caption) {
+    var username = process.env.INSTAGRAM_USERNAME;
+    var password = process.env.INSTAGRAM_PASSWORD;
+    Client.Session.create(device, storage, username, password)
+        .then(function(session) {
+            return [session, Client.Account.searchForUser(session, "instagram")]
+        })
+        .spread(function(session, account) {
+            upload_photo_to_ingrm(session, stream, caption)
+        })
+}
+
+function upload_photo_to_ingrm(session, stream, caption){
+    var path = __dirname +"/test.jpg";
+    fs.writeFile(path, stream, "base64", function(writeErr){
+        Client.Upload.photo(session, path)
+        .then(function(upload){
+            return Client.Media.configurePhoto(session, upload.params.uploadId, caption);
+        })
+        .then(function(medium){
+            fs.unlinkSync(path);
+        })
     })
+}
 wss.on("connection", function(ws) {
     console.log("YOU SHOULDNT BE READING THIS");
 
@@ -47,7 +77,7 @@ wss.on("connection", function(ws) {
                 })
             } else
                 ws.send("no image")
-        }else
-        ws.send("no share event")
+        } else
+            ws.send("no share event")
     });
 });
