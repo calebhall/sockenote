@@ -8,21 +8,28 @@ var express = require('express'),
     }),
     port = process.env.PORT || 5000;
 
+// var configFile;
+// configFile = __dirname + "/config.js";
+// var config = JSON.parse(
+//     fs.readFileSync(configFile));
+
+
+
 app.use(express.static(__dirname + "/public"));
 server.listen(port, function() {
     console.log("listening on port", port);
 });
 var Twit = require("twit"),
     T = new Twit({
-        consumer_key: process.env.CONSUMER_KEY,
-        consumer_secret: process.env.CONSUMER_SECRET,
-        access_token: process.env.ACCESS_TOKEN,
-        access_token_secret: process.env.ACCESS_TOKEN_SECRET
+        consumer_key: process.env.CONSUMER_KEY || config.CONSUMER_KEY,
+        consumer_secret: process.env.CONSUMER_SECRET || config.CONSUMER_SECRET,
+        access_token: process.env.ACCESS_TOKEN || config.ACCESS_TOKEN,
+        access_token_secret: process.env.ACCESS_TOKEN_SECRET || config.ACCESS_TOKEN_SECRET
     });
 
 var Client = require("instagram-private-api").V1;
 var device = new Client.Device("sockenote");
-var storage = new Client.CookieFileStorage(__dirname + "/cookie/caleb.json");
+var storage = new Client.CookieFileStorage(__dirname + "/cookies/someuser.json");
 
 function login_to_igrm_and_upload_image(stream, caption) {
     var username = process.env.INSTAGRAM_USERNAME;
