@@ -21,10 +21,10 @@ server.listen(port, function() {
 });
 var Twit = require("twit"),
     T = new Twit({
-        consumer_key: process.env.CONSUMER_KEY || config.CONSUMER_KEY,
-        consumer_secret: process.env.CONSUMER_SECRET || config.CONSUMER_SECRET,
-        access_token: process.env.ACCESS_TOKEN || config.ACCESS_TOKEN,
-        access_token_secret: process.env.ACCESS_TOKEN_SECRET || config.ACCESS_TOKEN_SECRET
+        consumer_key: process.env.CONSUMER_KEY,// || config.CONSUMER_KEY,
+        consumer_secret: process.env.CONSUMER_SECRET,// || config.CONSUMER_SECRET,
+        access_token: process.env.ACCESS_TOKEN,// || config.ACCESS_TOKEN,
+        access_token_secret: process.env.ACCESS_TOKEN_SECRET// || config.ACCESS_TOKEN_SECRET
     });
 
 var Client = require("instagram-private-api").V1;
