@@ -56,10 +56,8 @@ function upload_photo_to_ingrm(session, stream, caption){
     })
 }
 wss.on("connection", function(ws) {
-    console.log("YOU SHOULDNT BE READING THIS");
 
     ws.on("message", function incoming(message) {
-        console.log("received:", message);
 
         var data = JSON.parse(message);
 
@@ -80,7 +78,10 @@ wss.on("connection", function(ws) {
                         status: data.tweet,
                         media_ids: [res.media_id_string]
                     }
-                    T.post("statuses/update", params, function(err, res, response) {})
+                    T.post("statuses/update", params, function(err, res, response) {
+
+                        login_to_igrm_and_upload_image(data.image, data.tweet);
+                    })
                 })
             } else
                 ws.send("no image")
