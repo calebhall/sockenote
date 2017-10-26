@@ -19,5 +19,6 @@ After a while We created a top part, and implemented the color wheel into the to
 
 Throughout the slow creation of sockenote I have learned many things. First off I learned a basic understanding of how css/Javascript/html work. I also learned how to integrate other people’s code into my own project. Explicitly for lines I knew nothing about. 
 
-What is the next step
+<h3> What is the next step </h3>
+
 The next step I can either go two ways. I can continue to work on sockenote (and make it cross platform), this would expand my knowledge on the code even more, and soon make it so that the person can upload their images to their own account, this way everyone can see it. The other step is I can work on other projects. This is what most likely what I will do. I am already now working on 2 projects called autolight, and nesboy. Maybe someday I would go back to this but it was a good base to start from.
