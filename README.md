@@ -1,13 +1,8 @@
 # sockenote
 
 <h3>What is Sockenote?</h3> 
-Sockenote is an web application that allows user to draw on top of live camera feed. It includes multiple drawing features, such as a color wheel, and brush size module. When the user finishes their augmented drawing, they can share the result on the twitter 
-[Chromium](http://www.chromium.org).
 
-The Electron framework lets you write cross-platform desktop applications
-using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) and
-[Chromium](http://www.chromium.org) and is used by the [Atom
-editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
+Socketnote is an web application that allows user to draw on top of live camera feed. It includes multiple drawing features, such as a color wheel, and brush size module. When the user finishes their augmented drawing, they can share the result on the twitter [@real_sockenote](https://twitter.com/real_sockenote).
 
 
 <h3> Why did I make this?????? </h3>
