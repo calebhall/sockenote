@@ -55,10 +55,13 @@ var Twit = require("twit"),
 // }
 
 wss.on("connection", function(ws) {
+    console.log('connection');
 
     ws.on("message", function incoming(message) {
 
         var data = JSON.parse(message);
+        console.log('incoming message', data);
+        
         if (!data.hasOwnProperty("event")) {
             console.log("no event");
             ws.send("no event");
