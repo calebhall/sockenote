@@ -1,9 +1,14 @@
 # sockenote
 
 <h3>What is Sockenote?</h3> 
+<<<<<<< HEAD
 Sockenote is an web application that allows user to draw on top of live camera feed. It includes multiple drawing features, such as a color wheel, and brush size module. When the user finishes their augmented drawing, they can share the result on the twitter
 
 [@real_sockenote](https://twitter.com/real_sockenote).
+=======
+
+Socketnote is an web application that allows user to draw on top of live camera feed. It includes multiple drawing features, such as a color wheel, and brush size module. When the user finishes their augmented drawing, they can share the result on the twitter [@real_sockenote](https://twitter.com/real_sockenote).
+>>>>>>> origin/master
 
 
 <h3> Why did I make this?????? </h3>
